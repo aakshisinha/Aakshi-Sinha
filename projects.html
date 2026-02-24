@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Aakshi Sinha</title>
+  <meta name="description" content="Projects by Aakshi Sinha — UX research, market research, and interactive design." />
+  <link rel="stylesheet" href="styles.normalize.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="scripts/scripts.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <ul>
+      <li class="logo">
+        <a class="logo-link" href="page.html">
+          <img src="images/aakshi-logo.png" alt="Aakshi Sinha home">
+        </a>
+      </li>
+      <li><a class="about-link" href="about.html">About</a></li>
+      <li><a class="projects-link" href="projects.html">Projects</a></li>
+      <li><a class="contact-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <h1>Projects</h1>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="audio">Audio</button>
+      </div>
+    </div>
+
+    <!-- PROJECTS GRID -->
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- CARD 1 -->
+      <a href="boston-open-mic.html" class="project-card" data-category="design">
+        <div class="project-image">
+          <img src="images/placeholder.JPG" alt="Boston Open Mic">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Design</p>
+          <h2>Boston Open Mic</h2>
+          <p class="project-description">Interactive platform connecting local musicians and venues</p>
+        </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="sounds-of-aulus.html" class="project-card" data-category="design">
+        <div class="project-image">
+          <img src="images/placeholder.JPG" alt="Sounds of Aulus">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Design</p>
+          <h2>Sounds of Aulus</h2>
+          <p class="project-description">Audio-based digital experience exploring sound and place</p>
+        </div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="spotify.html" class="project-card" data-category="research">
+        <div class="project-image">
+          <img src="images/placeholder.JPG" alt="Spotify Research">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Research</p>
+          <h2>Spotify</h2>
+          <p class="project-description">UX research study on music discovery behaviors</p>
+        </div>
+      </a>
+
+      <!-- CARD 4 -->
+      <a href="sephora.html" class="project-card" data-category="research">
+        <div class="project-image">
+          <img src="images/placeholder.JPG" alt="Sephora Research">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Research</p>
+          <h2>Sephora</h2>
+          <p class="project-description">Market research on consumer shopping experiences</p>
+        </div>
+      </a>
+
+      <!-- CARD 5 -->
+      <a href="audio1.html" class="project-card" data-category="audio">
+        <div class="project-image">
+          <img src="images/placeholder.JPG" alt="Audio 1 Project">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Audio</p>
+          <h2>Audio 1</h2>
+          <p class="project-description">Market research on consumer shopping experiences</p>
+        </div>
+      </a>
+
+      <!-- CARD 6 -->
+      <a href="audio2.html" class="project-card" data-category="audio">
+        <div class="project-image">
+          <img src="images/placeholder.JPG" alt="Audio 2 Project">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Audio</p>
+          <h2>Audio 2</h2>
+          <p class="project-description">Market research on consumer shopping experiences</p>
+        </div>
+      </a>
+
+
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-tagline">Research, Design, Sound</p>
+        <div class="footer-links">
+          <a href="mailto:aakshisinha@gmail.com">aakshisinha@gmail.com</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FILTER SCRIPT -->
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('hidden', !match);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

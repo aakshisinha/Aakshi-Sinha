@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sephora Research — Aakshi Sinha</title>
+  <meta name="description" content="Market research on consumer shopping experiences at Sephora." />
+  <link rel="stylesheet" href="styles.normalize.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="scripts/scripts.js" defer></script>
+
+  <style>
+    .project-hero {
+      padding: 60px 0 40px;
+      border-bottom: 2px solid #507afd;
+      margin-bottom: 60px;
+    }
+    .project-eyebrow {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #B2CB21;
+      margin: 0 0 16px;
+    }
+    .project-hero h1 {
+      justify-content: flex-start;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      margin: 0 0 24px;
+    }
+    .project-hero-subtitle {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      max-width: 620px;
+      margin: 0;
+      font-weight: 300;
+    }
+    .project-meta {
+      display: flex;
+      gap: 50px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta-label {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #B2CB21;
+    }
+    .meta-value {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 1rem;
+      color: #507afd;
+    }
+    .project-full-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 80px;
+      border: 2px solid #507afd;
+    }
+    .project-body {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      margin-bottom: 80px;
+      align-items: start;
+    }
+    .project-body-aside h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+    }
+    .project-body-content p {
+      margin-top: 0;
+    }
+    .project-pullquote {
+      border-left: 5px solid #B2CB21;
+      padding: 24px 32px;
+      margin: 60px 0;
+      background: rgba(80,122,253,0.05);
+    }
+    .project-pullquote p {
+      font-family: "Instrument Serif", serif;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      margin: 0;
+      color: #507afd;
+      font-style: italic;
+    }
+    .project-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 80px;
+    }
+    .project-img-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid #507afd;
+    }
+    .section-divider {
+      border: none;
+      border-top: 2px solid #507afd;
+      margin: 60px 0;
+    }
+    .project-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0 80px;
+      border-top: 2px solid #507afd;
+    }
+    .project-nav a {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #507afd;
+      text-decoration: none;
+      border-bottom: 3px solid #B2CB21;
+      padding-bottom: 2px;
+      transition: background 0.2s;
+    }
+    .project-nav a:hover {
+      background: #B2CB21;
+    }
+
+    /* Insights list */
+    .insights-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .insights-list li {
+      border-top: 1px solid #507afd;
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      font-family: "Roboto Condensed", sans-serif;
+      color: #507afd;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .insights-list li:last-child {
+      border-bottom: 1px solid #507afd;
+    }
+    .insight-label {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      padding-top: 2px;
+      color: #B2CB21;
+    }
+
+    /* Methods tag list */
+    .methods-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px;
+    }
+    .methods-list li {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #f3ede4;
+      background: #507afd;
+      padding: 6px 16px;
+    }
+
+    @media (max-width: 768px) {
+      .project-body { grid-template-columns: 1fr; gap: 20px; }
+      .project-img-grid { grid-template-columns: 1fr; }
+      .insights-list li { grid-template-columns: 1fr; gap: 4px; }
+      .project-meta { gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <ul>
+      <li class="logo">
+        <a class="logo-link" href="page.html">
+          <img src="images/placeholder.JPG" alt="Aakshi Sinha home">
+        </a>
+      </li>
+      <li><a class="about-link" href="about.html">About</a></li>
+      <li><a class="projects-link" href="projects.html">Projects</a></li>
+      <li><a class="contact-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="project-hero">
+      <p class="project-eyebrow">Research</p>
+      <h1>Sephora</h1>
+      <p class="project-hero-subtitle">
+        A market research study exploring how consumers navigate the beauty retail experience — in-store and online — and what trust, expertise, and personalization mean in a high-consideration category.
+      </p>
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">Market Researcher</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Timeline</span>
+          <span class="meta-value">8 weeks, 2024</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Methods</span>
+          <span class="meta-value">Survey, Ethnographic Observation, Interviews</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Type</span>
+          <span class="meta-value">Market Research</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <img class="project-full-img" src="images/placeholder.JPG" alt="Sephora research — overview">
+
+    <!-- OVERVIEW -->
+    <div class="project-body">
+      <div class="project-body-aside">
+        <h2>Overview</h2>
+      </div>
+      <div class="project-body-content">
+        <p>
+          Beauty retail sits at an interesting intersection of the sensory and the digital. Sephora has invested heavily in both — physical store experience, a robust app, AR try-on, loyalty rewards — but the question driving this research was simpler: when a shopper feels confident in a purchase, what made them feel that way?
+        </p>
+        <p>
+          I combined in-store ethnographic observation with a 120-person survey and follow-up interviews with 8 participants who regularly shop at Sephora, focusing on moments of trust-building, uncertainty, and decision-making across the omnichannel journey.
+        </p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- METHODS -->
+    <div class="project-body">
+      <div class="project-body-aside">
+        <h2>Methods</h2>
+      </div>
+      <div class="project-body-content">
+        <ul class="methods-list">
+          <li>Survey (n=120)</li>
+          <li>Ethnographic Observation</li>
+          <li>Semi-Structured Interviews</li>
+          <li>Journey Mapping</li>
+          <li>Competitive Analysis</li>
+        </ul>
+        <p>
+          In-store observations were conducted over three visits at a Boston-area Sephora, documenting shopper behavior, interactions with staff, product engagement, and the use of in-store technology. Field notes were coded for recurring themes around confidence and hesitation.
+        </p>
+        <p>
+          Survey data was analyzed for demographic patterns, channel preference, and trust-building factors. Interview participants were selected to represent a range of experience levels, from beauty novices to enthusiasts with deep category knowledge.
+        </p>
+      </div>
+    </div>
+
+    <!-- PULLQUOTE -->
+    <div class="project-pullquote">
+      <p>"I always look at reviews on my phone while I'm standing in the store. The associate is right there, but I still want another opinion."</p>
+    </div>
+
+    <!-- INSIGHTS -->
+    <div class="project-body">
+      <div class="project-body-aside">
+        <h2>Key Insights</h2>
+      </div>
+      <div class="project-body-content">
+        <ul class="insights-list">
+          <li>
+            <span class="insight-label">Trust Hierarchy</span>
+            <span>Shoppers consistently ranked peer reviews (community members with similar skin type or tone) above both brand claims and staff recommendations. User-generated content on the Sephora app was the most trusted in-purchase source.</span>
+          </li>
+          <li>
+            <span class="insight-label">Channel Blending</span>
+            <span>72% of survey respondents reported using their phone while in-store. Parallel digital behavior — checking reviews, comparing prices, looking up tutorials — was the norm, not the exception.</span>
+          </li>
+          <li>
+            <span class="insight-label">Expert Gap</span>
+            <span>Shoppers with lower category knowledge reported higher anxiety and a stronger desire for staff interaction, but also lower confidence in whether staff recommendations were genuine or sales-driven.</span>
+          </li>
+          <li>
+            <span class="insight-label">Loyalty as Identity</span>
+            <span>Beauty Insider program membership had strong emotional valence — participants talked about tier status with pride. The loyalty program was doing identity work beyond discounts.</span>
+          </li>
+          <li>
+            <span class="insight-label">Returns Reduce Risk</span>
+            <span>Sephora's generous return policy was cited unprompted by 6 of 8 interview participants as a key reason they were willing to experiment with unfamiliar products.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- IMAGE GRID -->
+    <div class="project-img-grid">
+      <img src="images/placeholder.JPG" alt="Customer journey map">
+      <img src="images/placeholder.JPG" alt="Survey data visualization">
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- DELIVERABLES -->
+    <div class="project-body">
+      <div class="project-body-aside">
+        <h2>Deliverables</h2>
+      </div>
+      <div class="project-body-content">
+        <p>
+          The research culminated in a full market research report including an executive summary, methodology documentation, findings with supporting evidence, and a set of strategic recommendations for improving the omnichannel experience — particularly around expert credibility, peer review discoverability, and in-store digital integration.
+        </p>
+        <p>
+          A customer journey map was produced tracing the research-to-purchase path across four shopper archetypes, highlighting key moments of confidence and friction at each touchpoint.
+        </p>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="project-nav">
+      <a href="spotify.html">← Spotify</a>
+      <a href="projects.html">All Projects →</a>
+    </div>
+
+  </div>
+</body>
+</html>
