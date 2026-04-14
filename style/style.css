@@ -119,10 +119,6 @@ ul {
   margin-bottom: 80px;
 }
 
-/*
-  The h1 is already defined globally with display:flex / justify-content:center.
-  Override it on the homepage so it left-aligns and wraps naturally.
-*/
 .home-hero h1 {
   justify-content: flex-start;
   font-size: clamp(3.5rem, 7vw, 6rem);
@@ -136,7 +132,6 @@ ul {
   max-width: 560px;
   font-weight: 300;
   margin: 0;
-  /* inherits color and font from global p styles */
 }
 
 
@@ -146,10 +141,6 @@ ul {
   margin-bottom: 100px;
 }
 
-/*
-  Places the "Projects" h2 and filter buttons on the same row,
-  aligned to opposite ends — mirrors the visual rhythm of the navbar.
-*/
 .home-section-header {
   display: flex;
   align-items: center;
@@ -169,10 +160,6 @@ ul {
 
 /* ── SITE FOOTER ────────────────────────────────────── */
 
-/*
-  Replaces the old .footer rule.
-  Full-width background stripe, content constrained by .container inside.
-*/
 .site-footer {
   border-top: 2px solid #507afd;
   padding: 40px 0;
@@ -216,10 +203,6 @@ ul {
 
 
 /* ── SHARED PROJECT PAGE STYLES ─────────────────────── */
-/*
-  Move these here from the <style> blocks inside each project HTML file.
-  Any style used on more than one page belongs in this shared file.
-*/
 
 .project-hero {
   padding: 60px 0 40px;
@@ -237,7 +220,6 @@ ul {
   margin: 0 0 16px;
 }
 
-/* Override the global h1 center-alignment on project pages */
 .project-hero h1 {
   justify-content: flex-start;
   font-size: clamp(2.8rem, 6vw, 5rem);
@@ -286,6 +268,28 @@ ul {
   display: block;
   margin-bottom: 80px;
   border: 2px solid #507afd;
+}
+
+.project-cta {
+  margin-bottom: 80px;
+}
+
+.project-cta a {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f3ede4;
+  background: #507afd;
+  text-decoration: none;
+  padding: 14px 28px;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.project-cta a:hover {
+  background: #B2CB21;
 }
 
 .project-body {
@@ -390,6 +394,104 @@ ul {
   padding: 6px 16px;
 }
 
+/* Findings grid (Spotify) */
+.findings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.finding-card {
+  border: 2px solid #507afd;
+  padding: 28px;
+}
+
+.finding-num {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.5rem;
+  color: #B2CB21;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.finding-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Insights list (Sephora) */
+.insights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.insights-list li {
+  border-top: 1px solid #507afd;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #507afd;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.insights-list li:last-child {
+  border-bottom: 1px solid #507afd;
+}
+
+.insight-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  padding-top: 2px;
+  color: #B2CB21;
+}
+
+/* UX principles list (Sounds of Aulus) */
+.ux-principles {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ux-principles li {
+  border-top: 1px solid #507afd;
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #507afd;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.ux-principles li:last-child {
+  border-bottom: 1px solid #507afd;
+}
+
+.ux-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  padding-top: 2px;
+  color: #B2CB21;
+}
+
 
 /* ── RESPONSIVE ─────────────────────────────────────── */
 
@@ -420,6 +522,20 @@ ul {
 
   .project-meta {
     gap: 28px;
+  }
+
+  .findings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .ux-principles li {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }
 
@@ -477,6 +593,11 @@ ul {
   padding-top: 40px;
 }
 
+/* Two-column override for homepage */
+.projects-grid--two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .project-card {
   text-decoration: none;
   color: inherit;
@@ -521,7 +642,6 @@ ul {
   letter-spacing: 1px;
 }
 
-
 .project-description {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -536,16 +656,17 @@ ul {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .projects-grid {
+  .projects-grid,
+  .projects-grid--two-col {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .filter-buttons {
     flex-wrap: wrap;
     gap: 15px;
   }
-  
+
   .filter-btn {
     font-size: 1rem;
     padding: 10px 20px;
@@ -630,4 +751,116 @@ img {
 
 .bio {
   padding-right: 10%;
+}
+
+
+/* ── ABOUT PAGE EXTRAS ──────────────────────────────── */
+
+.about-extras {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 2px solid #507afd;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-bottom: 100px;
+}
+
+.about-list h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.about-list ul li {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.25rem;
+  color: #507afd;
+  padding-left: 20px;
+  position: relative;
+}
+
+.about-list ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #B2CB21;
+}
+
+
+/* ── FEATURED ON SECTION ────────────────────────────── */
+
+.featured-on h2 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.feature-item {
+  padding: 32px 0;
+  border-top: 2px solid #507afd;
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 40px;
+  align-items: start;
+}
+
+.feature-item:last-child {
+  border-bottom: 2px solid #507afd;
+}
+
+.feature-item h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #507afd;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.feature-item p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 300;
+}
+
+.feature-item a {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #507afd;
+  text-decoration: none;
+  border-bottom: 3px solid #B2CB21;
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.feature-item a:hover {
+  background: #B2CB21;
+}
+
+
+/* ── RESPONSIVE: ABOUT & FEATURED ON ───────────────── */
+
+@media (max-width: 768px) {
+  .about-extras {
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .feature-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
