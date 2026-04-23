@@ -36,7 +36,7 @@ h1 {
   font-weight: 400;
   color: #507afd;
   font-style: normal;
-  font-size: 3.50rem;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
 }
@@ -121,7 +121,7 @@ ul {
 
 .home-hero h1 {
   justify-content: flex-start;
-  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-size: clamp(3.5rem, 7vw, 5rem);
   margin: 0 0 32px;
   max-width: 700px;
 }
@@ -599,6 +599,7 @@ ul {
 }
 
 .project-card {
+  border-radius: 25px;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -612,6 +613,7 @@ ul {
 
 .project-image {
   width: %;
+  border-radius: 25px;
   overflow: hidden;
   margin-bottom: 20px;
 }
